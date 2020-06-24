@@ -12,11 +12,5 @@ class HomeController extends ParentController
     {
         return view('Admin.Pages.home');
     }
-
-    public function logout()
-    {
-        Auth::logout();
-
-        return view('welcome');
-    }
+    
 }
