@@ -9,15 +9,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @include('auth.Includes.css')
 </head>
 <body>
     <div id="app">
@@ -61,7 +53,7 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="GET" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
@@ -76,5 +68,6 @@
             @yield('content')
         </main>
     </div>
+    @include('auth.Includes.js')
 </body>
 </html>
